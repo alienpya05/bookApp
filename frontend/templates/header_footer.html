@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Books</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <h2>Books</h2>
+            <nav>
+                <a href="{% url 'accueil' %}">Accueil</a>
+                <a href="{% url 'services' %}">Nos Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>Suivez-nous sur les réseaux sociaux :</p>
+            <ul class="social-links">
+                
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/votrepage" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com/votrecompte" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/votrecompte" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+                </ul>
+            </ul>
+        </footer>
+    </body>
+</html>
