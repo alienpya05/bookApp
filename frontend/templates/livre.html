@@ -1,0 +1,14 @@
+{% extends 'header_footer.html' %}
+
+{% block content%}
+<div class="row">
+    
+    <div >
+        <img src="{{ livre.image.url }}" alt="{{ livre.titre }}">
+        <h2>{{ livre.titre }}</h2>
+        <p><strong>Auteur:</strong> {{ livre.auteur }}</p>
+        <p><strong>Description:</strong> {{ livre.commentaire }}</p>
+        <p><strong>Date de publication:</strong> {{ livre.datePublication }}</p>
+        <!-- Ajoutez d'autres détails du livre selon vos champs -->
+    </div>
+{% endblock %}

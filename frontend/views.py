@@ -3,6 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 from django.shortcuts import render,redirect
 from backend.forms import LivreForm
+from backend.models import Livre
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def Accueil(request):
@@ -24,3 +26,11 @@ def ajouter_livre(request):
         form = LivreForm()
     
     return render(request, 'Nos_services.html', {'form': form})
+
+def afficher_livre(request):
+    livre = Livre.objects.all()
+    return render(request,'Accueil.html',{'livre':livre})
+
+def detail_Livre(request, livre_titre):
+    livre = get_object_or_404(Livre, titre=livre_titre)
+    return render(request, 'livre.html', {'livre': livre})

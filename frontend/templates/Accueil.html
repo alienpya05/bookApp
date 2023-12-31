@@ -1,8 +1,16 @@
 {% extends 'header_footer.html' %}
 
 {% block content%}
+    {% for book in livre %}
 
-    <h2>Accueil</h2>
-    <p>Ceci est le contenu  de la page Accueil</p>
-
+            <div class="card " style="width: 12em;">
+                <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.titre }}" style="height: 10px witdh: 150px ; object-fit: cover;">
+                <div class="card-body">
+                <h5 class="card-title">{{ book.titre }}</h5>
+                </div>
+                
+               <button class="btn btn-primary"><a href="{% url 'detail_livre' livre_titre=book.titre %}" style="color: white; text-decoration: none;">Voir plus</a></button>
+                
+            </div>
+    {% endfor %}
 {% endblock %}

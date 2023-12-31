@@ -2,41 +2,35 @@
 
 {% block content%}
 
-    <h2>Services</h2>
-    <p>Ceci est le contenu  de la page Services</p>
-
+<div class="container mt-4 mb-4">
+    <h2 class="text-center">Ajouter un Livre</h2>
     <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <p>
-            <label for="id_titre">Titre:</label><br>
-            <input type="text" id="id_titre" name="titre">
-            
-        </p>
-        <p>
-            <label for="id_auteur">Auteur:</label><br>
-            <input type="text" id="id_auteur" name="auteur">
-            
-        </p>
-        <p>
-            <label for="id_datePublication">Date de publication:</label><br>
-            <input type="date" id="id_datePublication" name="datePublication">
-        </p>
-        <p>
-            <label for="id_image">Image:</label><br>
-            <input type="file" id="id_image" name="image">
-            
-        </p>
-        <p>
-            <label for="id_note">Note:</label><br>
-            <input type="number" id="id_note" name="note">
-            
-        </p>
-        <p>
-            <label for="id_commentaire">Commentaire:</label><br>
-            <textarea id="id_commentaire" name="commentaire"></textarea>
-           
-        </p>
-
-        <button type="submit">Ajouter le livre</button>
+      {% csrf_token %}
+      <p>
+        <label for="id_titre">Titre:</label><br>
+        <input type="text" id="id_titre" name="titre" class="form-control">
+      </p>
+      <p>
+        <label for="id_auteur">Auteur:</label><br>
+        <input type="text" id="id_auteur" name="auteur" class="form-control">
+      </p>
+      <p>
+        <label for="id_datePublication">Date de publication:</label><br>
+        <input type="date" id="id_datePublication" name="datePublication" class="form-control">
+      </p>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="image" id="customFile" onchange="updateFileName() ">
+        <label class="custom-file-label" for="customFile">Choisir une image</label>
+    </div>
+      <p>
+        <label for="id_note">Note:</label><br>
+        <input type="number" id="id_note" name="note" class="form-control">
+      </p>
+      <p>
+        <label for="id_commentaire">Commentaire:</label><br>
+        <textarea id="id_commentaire" name="commentaire" class="form-control"></textarea>
+      </p>
+      <button type="submit" class="btn btn-info ">Ajouter le livre</button>
     </form>
+  </div>
 {% endblock %}

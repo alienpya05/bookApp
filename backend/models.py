@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Livre(models.Model):
-    titre = models.CharField(max_length=10)
-    auteur = models.CharField(max_length=10)
+    titre = models.CharField(max_length=50)
+    auteur = models.CharField(max_length=30)
     datePublication = models.DateField()
     image = models.ImageField(upload_to='image_livre/')
     note =  models.IntegerField()

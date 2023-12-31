@@ -6,29 +6,127 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Books</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+            header {
+                background: linear-gradient(to right, #007bff, #0056b3); 
+            }
+            
+            .custom-navbar .navbar-brand,
+            .custom-navbar .navbar-nav .nav-link {
+                color: #ffffff; /* Couleur de texte blanche pour les liens */
+            }
+            footer {
+                background: linear-gradient(to right, #007bff, #0056b3); 
+                text-align: center;
+            }
+            .social-links {
+              list-style: none;
+              padding: 0;
+            }
+            .social-links li {
+              display: inline-block;
+              margin: 0 10px;
+            }
+            .social-links li a {
+              color: #ffffff;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            }
+            footer p{
+              color: #ffffff;
+            }   
+            form {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+            }
+            form p {
+                margin-bottom: 15px;
+            }
+            label {
+                font-weight: bold;
+            }
+            button[type="submit"] {
+                padding: 8px 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button[type="submit"]:hover {
+                background-color: #0056b3;
+            }
+            html,body{
+              height: 100%;
+              font-family: 'Montserrat', sans-serif;
+            }
+            body{
+              display: flex;
+              flex-direction: column;
+            }
+            main{
+                flex-grow: 1;
+                margin: 20px 0 20px 20px;
+            }
+            
+            
+          
+          
+          </style>
     </head>
     <body>
-        <header>
-            <h2>Books</h2>
-            <nav>
-                <a href="{% url 'accueil' %}">Accueil</a>
-                <a href="{% url 'services' %}">Nos Services</a>
-                <a href="#">Contact</a>
+        <header >
+            <nav class="navbar navbar-expand-lg  custom-navbar">
+              <a class="navbar-brand" href="# " >Books</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accueil' %}">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'services' %}">Nos Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </nav>
         </header>
         <main>
             {% block content %}{% endblock %}
         </main>
-        <footer>
-            <p>Suivez-nous sur les réseaux sociaux :</p>
-            <ul class="social-links">
-                
-                <ul class="social-links">
-                    <li><a href="https://www.facebook.com/votrepage" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a></li>
-                    <li><a href="https://twitter.com/votrecompte" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
-                    <li><a href="https://www.instagram.com/votrecompte" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a></li>
-                </ul>
-            </ul>
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+              <p>Suivez-nous sur les réseaux sociaux :</p>
+              <ul class="social-links">
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+              </ul>
+            </div>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <!-- Script pour charger le nom de l'image sélectioner avec le formulaire-->
+        <script>
+          function updateFileName() {
+            let input = document.getElementById('customFile');
+            let fileName = input.files[0].name;
+            let label = input.nextElementSibling;
+            label.innerText = fileName;
+        }
+        </script>
     </body>
 </html>
